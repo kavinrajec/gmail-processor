@@ -1,0 +1,64 @@
+[
+    {
+        "description": "Move recent interview emails (all conditions must match)",
+        "mode": "all",
+        "conditions": [
+            {"field": "from", "predicate": "contains", "value": "tenmiles.com"},
+            {"field": "subject", "predicate": "contains", "value": "Interview"},
+            {"field": "date_received", "predicate": "less_than_days", "value": 2}
+        ],
+        "actions": [
+            {"type": "move_message", "mailbox": "INBOX"},
+            {"type": "mark_unread"}
+        ]
+    },
+    {
+        "description": "Mark unread emails from specific sender",
+        "mode": "all",
+        "conditions": [
+            {"field": "from", "predicate": "contains", "value": "amazon.in"},
+            {"field": "subject", "predicate": "contains", "value": "return"},
+            {"field": "date_received", "predicate": "less_than_days", "value": 2}
+        ],
+        "actions": [
+            {"type": "mark_unread"},
+            {"type": "move_message", "mailbox": "IMPORTANT"}
+        ]
+    },
+    {
+        "description": "Mark as read if any of these match (any mode example)",
+        "mode": "any",
+        "conditions": [
+            {"field": "from", "predicate": "contains", "value": "newsletter"},
+            {"field": "subject", "predicate": "contains", "value": "Promotion"},
+            {"field": "subject", "predicate": "contains", "value": "BENQ"}
+        ],
+        "actions": [
+            {"type": "mark_read"},
+            {"type": "move_message", "mailbox": "IMPORTANT"}
+        ]
+    },
+    {
+        "description": "Example using equals and does_not_contain predicates",
+        "mode": "all",
+        "conditions": [
+            {"field": "subject", "predicate": "equals", "value": "Your Order Confirmation"},
+            {"field": "from", "predicate": "does_not_contain", "value": "spam"}
+        ],
+        "actions": [
+            {"type": "move_message", "mailbox": "IMPORTANT"}
+        ]
+    },
+    {
+        "description": "Example using message content and greater_than_days",
+        "mode": "all",
+        "conditions": [
+            {"field": "message", "predicate": "contains", "value": "invoice attached"},
+            {"field": "date_received", "predicate": "greater_than_days", "value": 30}
+        ],
+        "actions": [
+            {"type": "mark_read"},
+            {"type": "move_message", "mailbox": "ARCHIVED"}
+        ]
+    }
+]
