@@ -24,8 +24,8 @@ A standalone Python script that integrates with Gmail API, fetches emails from y
 1. Clone this repository
 
 ```bash
-git clone <repository-url>
-cd gmail_processor
+git clone https://github.com/kavinrajec/gmail-processor.git
+cd gmail-processor
 ```
 
 2. Create and activate a virtual environment

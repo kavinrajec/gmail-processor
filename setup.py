@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="gmail_processor",
+    name="gmail-processor",
     version="0.1",
-    description="Process Gmail inbox emails using custom rules",
+    description="Gmail processor tool to process Gmail inbox emails using custom rules",
     packages=find_packages(),
     install_requires=[
         "google-auth-oauthlib==1.2.0",
@@ -11,5 +11,5 @@ setup(
         "pytest==8.1.1",
         "tqdm==4.67.1",
     ],
-    python_requires=">=3.12",
+    python_requires=">=3.9.6",
 )
