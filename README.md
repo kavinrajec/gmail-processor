@@ -13,7 +13,7 @@ A standalone Python script that integrates with Gmail API, fetches emails from y
 
 ## Requirements
 
-- Python 3.12
+- Python 3.9.6
 - Pip package manager
 - SQLite
 - Gmail account
